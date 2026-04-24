@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Inter", sans-serif;
+
+  --color-gov-blue: #1e3a8a; /* Navy blue from design */
+  --color-accent-blue: #2563eb;
+  --color-gov-red: #dc2626;
+  --color-gov-gold: #f59e0b;
+}
+
+@layer base {
+  body {
+    @apply bg-[#f0f2f5] text-[#374151] antialiased font-sans text-[13px];
+  }
+
+  h1, h2, h3 {
+    @apply font-sans font-bold tracking-tight text-[#111827];
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[#2563eb] text-white px-4 py-2 rounded font-semibold transition-all hover:opacity-90 active:scale-95 disabled:opacity-50 shadow-sm text-[13px] text-center;
+  }
+  
+  .btn-secondary {
+    @apply bg-white border border-[#d1d5db] text-[#374151] px-4 py-2 rounded font-semibold transition-all hover:bg-[#f9fafb] active:scale-95 text-[13px] text-center;
+  }
+  
+  .card {
+    @apply bg-white border border-[#e5e7eb] rounded-lg shadow-sm overflow-hidden;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 border border-[#d1d5db] rounded focus:ring-1 focus:ring-[#2563eb] focus:border-transparent outline-none transition-all text-[14px] sm:text-[13px] bg-white;
+  }
+
+  .section-title {
+    @apply text-[11px] uppercase tracking-wider text-[#6b7280] font-bold mb-4 border-b border-[#f3f4f6] pb-1 block;
+  }
+
+  .customize-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+}
+
+/* Scrollbar styling for density */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white;
+    font-size: 10pt;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .card {
+    border: none;
+    box-shadow: none;
+  }
+  .truncate {
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: normal !important;
+  }
+  @page {
+    margin: 1cm;
+  }
+}

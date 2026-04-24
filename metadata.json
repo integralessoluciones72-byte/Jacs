@@ -1,0 +1,6 @@
+{
+  "name": "AsignaCurulComunal",
+  "description": "Herramienta técnica para la gestión de planchas y asignación de curules comunales mediante el método de cuociente electoral.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
